@@ -2,18 +2,25 @@
 
 <PageTitle>BlazorApp</PageTitle>
 
-<h1>Hello, @GetUserName()!</h1>
+<button @onclick="@(()=> {display = !display;})">Show</button>
 
-<button @onclick="@(() => {name = inputValue;})">Hello!</button>
-<input @bind="inputValue"  placeholder="Type your name"/>
+@if(display){
+    <h1>Hello, @GetUserName()!</h1>
 
-<p>Patryk Morawiec</p>
-<a href="https://patryk9999m.github.io/" target="_blank">About me</a>
+    <button @onclick="@(() => {name = inputValue;})">Hello!</button>
+    <input @bind="inputValue" placeholder="Type your name" />
+
+    <p>Patryk Morawiec</p>
+    <a href="https://patryk9999m.github.io/" target="_blank">About me</a>
+}
+
+
 
 
 @code{
     private string name = "world";
     private string inputValue = "";
+    private bool display = false;
     private string GetUserName()
     {
         return name;
