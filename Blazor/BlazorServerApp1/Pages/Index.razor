@@ -3,14 +3,17 @@
 <PageTitle>BlazorApp</PageTitle>
 
 <button @onclick="@(()=> {display = !display;})">Show</button>
-
+<br /><br />
 @if(display){
     <h1>Hello, @GetUserName()!</h1>
 
     <button @onclick="@(() => {name = inputValue;})">Hello!</button>
+    <br /><br />
     <input @bind="inputValue" placeholder="Type your name" />
-
+    <br /><br />
     <p>Patryk Morawiec</p>
+   
+    
     <a href="https://patryk9999m.github.io/" target="_blank">About me</a>
 }
 
