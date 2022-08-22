@@ -1,0 +1,20 @@
+﻿@page "/"
+
+<PageTitle>BlazorApp</PageTitle>
+
+<h1>Hello, @GetUserName()!</h1>
+
+<button @onclick="@(() => {name = "Mister";})">Hello!</button>
+
+<p>Patryk Morawiec</p>
+<a href="https://patryk9999m.github.io/" target="_blank">About me</a>
+
+@code{
+    private string name = "world";
+
+    private string GetUserName()
+    {
+        return name;
+    }
+
+}
